@@ -9,18 +9,25 @@
 <body>
     <div id="nav"></div>
     <button id="btn">Удалить Меню</button>
-
+    
     <script src="MenuItem.js"></script>
+    <script src="./SubMenu.js"></script>
     <script src="Menu.js"></script>
+
     <script>
         window.onload = () => {
             let block = document.getElementById('nav');
 
             let menu = new Menu('my', 'my', [
-                new MenuItem('/', 'Menu'),
-                new MenuItem('/about', 'About'),
-                new MenuItem('/services', 'Services'),
-                new MenuItem('/info', 'info'),
+                new MenuItem('/', 'Menu', [
+                    new SubMenu('/subMenu', 'Sub Menu'),
+                ]),
+                new MenuItem('/about', 'About', []),
+                new MenuItem('/services', 'Services', [
+                    new SubMenu('/subServices', 'Sub Services'),
+                    new SubMenu('/subServices1', 'Sub Services1'),
+                ]),
+                new MenuItem('/info', 'info', []),
                 // new SubMenu()
             ]);
 
@@ -34,6 +41,7 @@
             });
         }
     </script>
+
 </body>
 
 </html>
