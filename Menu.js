@@ -14,7 +14,10 @@ class Menu {
         result += `</ul>`;
         return result;
     }
-    remove(){
-        //TODO: удаление элемента ul
+    remove() {
+      document.getElementById(`${this.id}`).remove();
     }
 }
+
+
+

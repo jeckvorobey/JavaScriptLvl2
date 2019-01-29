@@ -1,29 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
+
 <body>
-<div id="menu"></div>
-<script src="main.js"></script>
-<script src="MenuItem.js"></script>
-<script src="Menu.js"></script>
-<script>
-    window.onload = () => {
-        let block = document.getElementById('menu');
+    <div id="nav"></div>
+    <button id="btn">Удалить Меню</button>
 
-        let menu = new Menu('my', 'my', [
-            new MenuItem('/', 'Menu'),
-            new MenuItem('/about', 'About'),
-            new MenuItem('/services', 'Services'),
-            new MenuItem('/info', 'info'),
-            // new SubMenu()
-        ]);
+    <script src="MenuItem.js"></script>
+    <script src="Menu.js"></script>
+    <script>
+        window.onload = () => {
+            let block = document.getElementById('nav');
 
-        block.innerHTML = menu.render();
-    }
+            let menu = new Menu('my', 'my', [
+                new MenuItem('/', 'Menu'),
+                new MenuItem('/about', 'About'),
+                new MenuItem('/services', 'Services'),
+                new MenuItem('/info', 'info'),
+                // new SubMenu()
+            ]);
 
-</script>
+            block.innerHTML = menu.render();
+
+            // Обработка кнопки удалить меню
+            let btn = document.getElementById('btn');
+            btn.addEventListener('click', () => {
+                menu.remove();
+                btn.style = 'display:none';
+            });
+        }
+    </script>
 </body>
+
 </html>
