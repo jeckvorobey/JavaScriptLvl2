@@ -8,9 +8,6 @@
 
 <body>
     <div id="nav"></div>
-    <!-- <button id="btn">Удалить Меню</button>
-    <button id="btnReturn" style="display: none;">Вернуть Меню</button> -->
-
     <div id="mainNav" style="margin-top: 100px;"></div>
 
     <script src="./Menu.js"></script>
@@ -32,6 +29,8 @@
             ]);
 
             block.innerHTML = menu.render();
+
+            // Создание кнопок для удаления меню
             btnRemove = () => {
                 let btn = document.createElement("button");
                 btn.textContent = "Удалить";
@@ -42,7 +41,7 @@
                 }
                 block.appendChild(btn);
             }
-
+            //кнопка возврата меню
             btnReturn = () => {
                 let btnReturn = document.createElement("button");
                 btnReturn.textContent = "Вернуть";
@@ -62,19 +61,17 @@
                     new MenuItem('/', 'Меню', [
                         new SubMenu('/subMenu', 'Подменю'),
                     ]),
-                    new MenuItem('/about', 'О бо мне', []),
+                    new MenuItem('/about', 'О бо мне', []), 
                     new MenuItem('/services', 'Сервисы', [
                         new SubMenu('/subServices', 'Сервис'),
                         new SubMenu('/subServices1', 'Сервис1'),
                     ]),
                     new MenuItem('/info', 'Информация', [])
-                ],
-                [
-                    new SubMenu('/subMenu', 'Подменю'),
                 ]);
 
             blockMainMenu.innerHTML = mainMenu.render();
 
+            //кнопка удаления mainMenu
             btnRemoveMainMenu = () => {
                 let btn = document.createElement("button");
                 btn.textContent = "Удалить";
@@ -85,7 +82,7 @@
                 }
                 blockMainMenu.appendChild(btn);
             }
-
+            // Кнопка возврата mainMenu
             btnReturnMainMenu = () => {
                 let btnReturn = document.createElement("button");
                 btnReturn.textContent = "Вернуть";
