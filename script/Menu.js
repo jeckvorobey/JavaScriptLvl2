@@ -7,7 +7,7 @@ class Menu {
     render(){
         let result = `<ul class="${this.className}" id="${this.id}">`;
         for (let item of this.items){
-            if (item instanceof MenuItem){
+            if (item instanceof MenuItem || item instanceof SubMenu){
                 result += item.render();
             }
         }
@@ -15,7 +15,7 @@ class Menu {
         return result;
     }
     remove() {
-      document.getElementById(`${this.id}`).remove();
+      document.getElementById(this.id).remove();
     }
 }
 
