@@ -3,18 +3,21 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Главная</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" href="./style/style.css">
 </head>
 
 <body>
     <nav id="nav"></nav>
+    <div id="gallery"></div>
 
     <script src="./script/Menu.js"></script>
     <script src="./script/MenuItem.js"></script>
     <script src="./script/SubMenu.js"></script>
-
+    <script src="./script/gallery.js"></script>
 
     <script>
         window.onload = () => {
@@ -27,9 +30,9 @@
                     new MenuItem('/chests', 'Комоды'),
                     new MenuItem('/beds', 'Кровати'),
                 ]),
-                new SubMenu ('/new', 'Новинки', 'new', 'subMenu', [
-                    new MenuItem('/sofas', 'Диваны'),
-                    new MenuItem('/kitchens','Кухни')
+                new SubMenu('/new', 'Новинки', 'new', 'subMenu', [
+                    new MenuItem('#', 'Диваны'),
+                    new MenuItem('/kitchens', 'Кухни')
                 ]),
                 new MenuItem('/about', 'О Компании'),
                 new MenuItem('/contacts', 'Контакты'),
