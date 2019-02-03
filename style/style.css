@@ -24,7 +24,7 @@ nav a {
 
 .mainMenu {
     background: white;
-    width: 50em;
+    width: 63em;
     margin: 0 auto;
     padding: .7em 0;
     display: flex;
@@ -105,7 +105,7 @@ nav a {
 }
 
 #gallery > a {
-    margin: 1em 3em;
+    margin: 1em 1em;
     position: relative;
 }
 
@@ -115,5 +115,5 @@ nav a {
 
 #gallery > a > img {
     height: 10em;
-    width: 10em;
+    width: 13em;
 }
