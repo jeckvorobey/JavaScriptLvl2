@@ -13,11 +13,16 @@
 <body>
     <nav id="nav"></nav>
     <div id="gallery"></div>
+    <p>
+        для просмотра реализации json выберите пункт меню НОВИНКИ &#8658; ДИВАНЫ<br><br>
+        для просмотра реализации ошибки json-файла выберите пунтк меню МЕБЕЛЬ &#8658; ШКАФЫ<br>
+    </p>
 
     <script src="./script/Menu.js"></script>
     <script src="./script/MenuItem.js"></script>
     <script src="./script/SubMenu.js"></script>
     <script src="./script/gallery.js"></script>
+    <script src="./script/cupboard.js"></script>
 
     <script>
         window.onload = () => {
@@ -25,7 +30,7 @@
 
             let menu = new Menu('Menu', 'mainMenu', [
                 new SubMenu('/', 'Мебель', 'furniture', 'subMenu', [
-                    new MenuItem('/cupboard', 'Шкафы'),
+                    new MenuItem('#', 'Шкафы'),
                     new MenuItem('/tables', 'Столы'),
                     new MenuItem('/chests', 'Комоды'),
                     new MenuItem('/beds', 'Кровати'),
