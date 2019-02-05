@@ -1,0 +1,119 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0 auto;
+    height: 100%;
+    font-family: 'Roboto', 'Arial' sans-serif;
+    font-size: 16px;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav a {
+    text-decoration: none;
+    outline: none;
+    display: block;
+    transition: .4s ease-in-out;
+}
+
+.mainMenu {
+    background: white;
+    width: 63em;
+    margin: 0 auto;
+    padding: .7em 0;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.mainMenu > li {
+    display: inline-block;
+    position: relative;
+}
+
+.mainMenu > li:after {
+    content: "";
+    position: absolute;
+    right: -1.2em;
+    width: .1em;
+    height: .8em;
+    background: #d2d2d2;
+    top: 1em;
+    box-shadow: 4px -2px 0 #d2d2d2;
+    transform: rotate(30deg);
+}
+
+.mainMenu > li:last-child:after {
+    background: none;
+    box-shadow: none;
+}
+
+.mainMenu > li > a {
+    padding: .8em 1.7em;
+    color: #767676;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: .1em;
+    font-family: 'Roboto', sans-serif;
+}
+
+.mainMenu li a:hover {
+    color: #c0a97a;
+}
+
+.subMenu {
+    position: absolute;
+    text-align: left;
+    width: 8em;
+    margin-left: 1em;
+    background: #fafafa;
+    border: 1px solid #ededed;
+    z-index: 5;
+    visibility: hidden;
+    opacity: 0;
+    transform: scale(.7);
+    transition: .5s ease-in-out;
+}
+
+.subMenu li a {
+    padding: 0.6em 0;
+    margin: 0 .6em;
+    border-bottom: 1px solid #efefef;
+    font-size: 1em;
+    color: #767676;
+    font-family: 'Roboto', sans-serif;
+}
+
+.mainMenu > li:hover .subMenu {
+    visibility: visible;
+    opacity: 1;
+    transform: scale(1);
+}
+
+#gallery {
+    width: 50em;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+#gallery > a {
+    margin: 1em 1em;
+    position: relative;
+}
+
+#gallery > a:hover {
+    cursor: pointer;
+}
+
+#gallery > a > img {
+    height: 10em;
+    width: 13em;
+}
