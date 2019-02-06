@@ -14,7 +14,7 @@ class CheckForm {
         console.log(test);
         if (!test) {
             document.getElementById(`${this.val.id}FormErr`).classList.add('showFormErr');
-        }else if (test && document.getElementById(`${this.val.id}FormErr`).classList.contains('showFormErr')) {
+        } else if (test && document.getElementById(`${this.val.id}FormErr`).classList.contains('showFormErr')) {
             document.getElementById(`${this.val.id}FormErr`).classList.remove('showFormErr');
         }
     }
@@ -22,20 +22,14 @@ class CheckForm {
 
 
 window.onload = () => {
-let name = new CheckForm(document.getElementById('name'), nameRegexp);
-let email = new CheckForm(document.getElementById('email'), emailRegexp);
-let phone = new CheckForm(document.getElementById('phone'), phoneRegexp);
- 
-    document.getElementById('test').addEventListener('click', () => {
+    let name = new CheckForm(document.getElementById('name'), nameRegexp);
+    let email = new CheckForm(document.getElementById('email'), emailRegexp);
+    let phone = new CheckForm(document.getElementById('phone'), phoneRegexp);
+
+    document.getElementById('form').addEventListener('submit', e => {
+        e.preventDefault();
         name.check();
         email.check();
         phone.check();
     })
-    // let btn = document.getElementById('btnSubmit');
-    // btn.addEventListener('click', () => {
-    //     name.check();
-    // })
-    //     document.getElementById('form').addEventListener('submit', e => {
-    //         e.preventDefault();
-    //     })
 }
