@@ -3,11 +3,9 @@
 }
 
 .form {
-    height: 300px;
     width: 400px;
     margin: 0 auto;
-padding: 0 20px;
-
+    padding: 0 20px;
 }
 
 .title {
@@ -17,18 +15,34 @@ padding: 0 20px;
 }
 
 input {
-width: 360px;
-margin-top: 10px;
+    width: 360px;
+  line-height: 20px;
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+}
+
+.star {
+    color: red;
+}
+
+.formErr {
+    display: none;
+    font-size: 11px;
+    color: brown;
+}
+
+.showFormErr {
+    display: inline-block;
 }
 
 textarea {
     width: 360px;
-    height: 50px;
-    margin-top: 10px;
+    height: 100px;
 }
 
-
-#btmSubmit,
-#btnReset{
+#btnSubmit, #btnReset {
     width: 180px;
 }
