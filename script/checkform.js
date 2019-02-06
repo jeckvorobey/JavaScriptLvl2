@@ -3,36 +3,39 @@ const emailRegexp = /^([\w\.-]+)@([\w]+)\.([\w]{2,10})$/i;
 const phoneRegexp = /^\+[0-9]{1,3}\((\d{3})\)(\d{3}\-\d{2}\-\d{2})$/;
 
 
-// let email = new CheckForm(document.querySelector('email'), emailRegexp);
-// let phone = new CheckForm(document.querySelector('phone'), phoneRegexp);
 
 class CheckForm {
-    constructor(val, regexp){
+    constructor(val, regexp) {
         this.val = val;
         this.regexp = regexp;
     }
-    check(){
+    check() {
         let test = this.regexp.test(this.val.value);
         console.log(test);
-    }
-    formErr() {
-
+        if (!test) {
+            document.getElementById(`${this.val.id}FormErr`).classList.add('showFormErr');
+        }else if (test && document.getElementById(`${this.val.id}FormErr`).classList.contains('showFormErr')) {
+            document.getElementById(`${this.val.id}FormErr`).classList.remove('showFormErr');
+        }
     }
 }
 
 
 window.onload = () => {
-    let name = new CheckForm(document.querySelector('name'), nameRegexp);
-
+let name = new CheckForm(document.getElementById('name'), nameRegexp);
+let email = new CheckForm(document.getElementById('email'), emailRegexp);
+let phone = new CheckForm(document.getElementById('phone'), phoneRegexp);
+ 
+    document.getElementById('test').addEventListener('click', () => {
+        name.check();
+        email.check();
+        phone.check();
+    })
     // let btn = document.getElementById('btnSubmit');
     // btn.addEventListener('click', () => {
     //     name.check();
     // })
-    
-
-    let form = document.getElementById('form')
-    form.addEventListener('submit', e => {
-        name.check();
-        e.preventDefault();
-    })
+    //     document.getElementById('form').addEventListener('submit', e => {
+    //         e.preventDefault();
+    //     })
 }
