@@ -2,8 +2,6 @@ const nameRegexp = /^[a-zа-яё]{2,30}$/i;
 const emailRegexp = /^([\w\.-]+)@([\w]+)\.([\w]{2,10})$/i;
 const phoneRegexp = /^\+[0-9]{1,3}\((\d{3})\)(\d{3}\-\d{2}\-\d{2})$/;
 
-
-
 class CheckForm {
     constructor(val, regexp) {
         this.val = val;

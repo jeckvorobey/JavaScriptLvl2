@@ -1,3 +1,9 @@
+
+html,
+body {
+    width: 100%;
+
+}
 .exercise1 {
     margin-left: 50px;
 }
