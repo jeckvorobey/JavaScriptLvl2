@@ -17,6 +17,7 @@
 input {
     width: 360px;
   line-height: 20px;
+  /* position: absolute; */
 }
 
 label {
@@ -31,7 +32,8 @@ label {
 .formErr {
     display: none;
     font-size: 11px;
-    color: brown;
+    font-weight: bold;
+    color:#e80909;
 }
 
 .showFormErr {
