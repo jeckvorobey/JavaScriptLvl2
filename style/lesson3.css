@@ -2,7 +2,7 @@
     margin-left: 50px;
 }
 
-.form {
+#form {
     width: 400px;
     margin: 0 auto;
     padding: 0 20px;
@@ -16,8 +16,8 @@
 
 input {
     width: 360px;
-  line-height: 20px;
-  /* position: absolute; */
+    line-height: 20px;
+    position: relative;
 }
 
 label {
@@ -33,11 +33,13 @@ label {
     display: none;
     font-size: 11px;
     font-weight: bold;
-    color:#e80909;
+    color: #e80909;
 }
 
 .showFormErr {
-    display: inline-block;
+    display: block;
+    position: absolute;
+    z-index: 50;
 }
 
 textarea {
