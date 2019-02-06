@@ -33,18 +33,34 @@
         </p>
         <button id="btn1">Заменить</button>
     </div>
-
-    <form action="" class="form" method="POST">
-        <h2 class="title">Напишите нам!</h2>
-        <input type="text" name="name" placeholder="Введите Ваше Имя">
-        <input type="email" name="email" placeholder="Введите Ваш E-mail">
-        <input type="tel" name="phone" placeholder="Введите Ваш номер телефона">
-        <textarea name="text" id="" cols="30" rows="10" maxlength="150" placeholder="Не более 150 символов"></textarea>
-        <input type="submit" id="btmSubmit">
-        <input type="reset" id="btnReset">
-    </form>
-
+    <div class="formWraper">
+        <form action="#" class="form" method="post">
+            <h2 class="title">Напишите нам!</h2>
+            <div class="wraper">
+                <label for="name">Имя<span class="star">*</span></label>
+                <input type="text" id="name" name="name" placeholder="Введите Ваше Имя">
+                <span class="formErr">Имя должно быть от 2 до 30 букв Латинского или Кирилического алфавита</span>
+                <label for="email">Адрес электронной почты<span class="star">*</span></label>
+                <input type="email" id="email" name="email" placeholder="abcdefg@email.com">
+                <span class="formErr">E-mail должен соответствовать формату xxxxxxxx@email.xxx</span>
+                <label for="phone">Номер телефона<span class="star">*</span></label>
+                <input type="tel" id="phone" name="phone" placeholder="+7(000)111-22-33">
+                <span class="formErr">Телефон должен строго соответствоватьформату +7(000)000-00-00</span>
+            </div>
+            <label for="textarea">Ваше сообщение</label>
+            <textarea name="text" id="" cols="30" rows="10" maxlength="150" placeholder="Не более 150 символов"></textarea>
+            <div class="btnWraper">
+                <!-- <button id="btnSubmit">Отправить</button> -->
+                <input type="submit" id="btnSubmit">
+                <input type="reset" id="btnReset">
+            </div>
+        </form>
+    </div>
     <script src="./script/exercise1.js"></script>
+    <script src="./script/checkform.js"></script>
+<script>
+
+</script>
 </body>
 
 </html>
