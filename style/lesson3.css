@@ -1,0 +1,58 @@
+
+html,
+body {
+    width: 100%;
+
+}
+.exercise1 {
+    margin-left: 50px;
+}
+
+#form {
+    width: 400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.title {
+    text-align: center;
+    text-transform: uppercase;
+    font-family: sans-serif;
+}
+
+input {
+    width: 360px;
+    line-height: 20px;
+    position: relative;
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+}
+
+.star {
+    color: red;
+}
+
+.formErr {
+    display: none;
+    font-size: 11px;
+    font-weight: bold;
+    color: #e80909;
+}
+
+.showFormErr {
+    display: block;
+    position: absolute;
+    z-index: 50;
+}
+
+textarea {
+    width: 360px;
+    height: 100px;
+}
+
+#btnSubmit, #btnReset {
+    width: 180px;
+}

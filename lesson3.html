@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style/lesson3.css">
+</head>
+
+<body>
+    <div class="exercise1">
+        <h2>Тект в котором заменили \' на \"</h2>
+        <p id="text">
+            One: 'Hi Mary.'<br>
+            Two: 'Oh, hi.'<br>
+            One: 'How are you doing?'<br>
+            Two: 'I'm doing alright. How about you?'<br>
+            One: 'Not too bad. The weather is great isn't it?'<br>
+            Two: 'Yes. It's absolutely beautiful today.'<br>
+            One: 'I wish it was like this more frequently.'<br>
+            Two: 'Me too.'<br>
+            One: 'So where are you going now?'<br>
+            Two: 'I'm going to meet a friend of mine at the department store.'<br>
+            One: 'Going to do a little shopping?'<br>
+            Two: 'Yeah, I have to buy some presents for my parents.'<br>
+            One: 'What's the occasion?'<br>
+            Two: 'It's their anniversary.'<br>
+            One: 'That's great. Well, you better get going. You don't want to be late.'<br>
+            Two: 'I'll see you next time.'<br>
+            One: 'Sure. Bye.'
+        </p>
+        <button id="btn1">Заменить</button>
+    </div>
+    <div class="formWraper">
+        <form action="#" id="form" method="post">
+            <h2 class="title">Напишите нам!</h2>
+            <div class="wraper">
+                <label for="name">Имя<span class="star">*</span></label>
+                <input type="text" id="name" name="name" placeholder="Введите Ваше Имя">
+                <span id="nameFormErr" class="formErr">Имя должно быть от 2 до 30 букв Латинского или Кирилического алфавита</span>
+                <label for="email">Адрес электронной почты<span class="star">*</span></label>
+                <input type="email" id="email" name="email" placeholder="abcdefg@email.com">
+                <span id="emailFormErr" class="formErr">E-mail должен соответствовать формату xxxxxxxx@email.xxx</span>
+                <label for="phone">Номер телефона<span class="star">*</span></label>
+                <input type="tel" id="phone" name="phone" placeholder="+7(000)111-22-33">
+                <span id="phoneFormErr" class="formErr">Телефон должен строго соответствоватьформату +7(000)000-00-00</span>
+            </div>
+            <label for="textarea">Ваше сообщение</label>
+            <textarea name="text" id="" cols="30" rows="10" maxlength="150" placeholder="Не более 150 символов"></textarea>
+            <div class="btnWraper">
+                <input type="submit" id="btnSubmit">
+                <input type="reset" id="btnReset">
+            </div>
+        </form>
+    </div>
+    <script src="./script/exercise1.js"></script>
+    <script src="./script/checkform.js"></script>
+<script>
+
+</script>
+</body>
+
+</html>
