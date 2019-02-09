@@ -1,9 +1,5 @@
 
-html,
-body {
-    width: 100%;
 
-}
 .exercise1 {
     margin-left: 50px;
 }
@@ -12,9 +8,12 @@ body {
     width: 400px;
     margin: 0 auto;
     padding: 0 20px;
+    display: flex;
+    flex-direction: column;
 }
 
 .title {
+    margin-bottom: 0;
     text-align: center;
     text-transform: uppercase;
     font-family: sans-serif;
@@ -29,6 +28,11 @@ input {
 label {
     display: block;
     margin-top: 15px;
+}
+
+#city {
+    width: 360px;
+    height: 26px;
 }
 
 .star {
@@ -53,6 +57,11 @@ textarea {
     height: 100px;
 }
 
-#btnSubmit, #btnReset {
-    width: 180px;
+.btnWraper {
+    margin: 0 auto;
+}
+
+#btnSubmit,
+#btnReset {
+    width: 100px;
 }
