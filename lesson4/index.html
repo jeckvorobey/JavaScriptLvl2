@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+     <link rel="stylesheet" href="../style/lesson3.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="jquery-3.3.1.min.js" defer></script>
+    <script src="jquery.mask.min.js" defer></script>
+    <script src="script.js" defer></script>
+    <script src="../script/checkform.js" defer></script>
+
+<body>
+    <!-- поле автокомплит решение задания №3 -->
+    <div class="search">
+        <p>Поиск города:</p>
+        <input type="text" list="cityList">
+        <datalist id="cityList"></datalist>
+    </div>
+
+    <!-- Блок с кладками TAB решение задания №1 -->
+    <div id="tabs">
+        <div class="tab whiteBorder">
+            Вкладка 1
+        </div>
+        <div class="tab">Вкладка 2</div>
+        <div class="tab">Вкладка 3</div>
+        <div class="tab">Вкладка 4</div>
+        <div class="tab">Вкладка 5</div>
+        <div class="tabContent">
+            <h4> Информация с вкладки 1:</h4> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nemo,
+            assumenda.
+        </div>
+        <div class="tabContent">
+            <h4> Информация с вкладки 2:</h3> Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati,
+                ipsam.
+        </div>
+        <div class="tabContent">
+            <h4> Информация с вкладки 3:</h3> Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati,
+                ipsam.
+        </div>
+        <div class="tabContent">
+            <h4> Информация с вкладки 4:</h3> Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati,
+                ipsam.
+        </div>
+        <div class="tabContent">
+            <h4> Информация с вкладки 5:</h4> Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati,
+            ipsam.
+        </div>
+    </div>
+
+    <!-- В форму добавлен селект с возможностью выбора города решение задания 2 -->
+    <form action="#" id="form" method="post">
+        <h2 class="title">Напишите нам!</h2>
+        <div class="wraper">
+            <label for="name">Имя<span class="star">*</span></label>
+            <input type="text" id="name" name="name" placeholder="Введите Ваше Имя">
+            <span id="nameFormErr" class="formErr">Имя должно быть от 2 до 30 букв Латинского или Кирилического
+                алфавита</span>
+            <label for="city">Выберете Ваш город:</label>
+            <select name="city" id="city" size=""></select>
+            <label for="email">Адрес электронной почты<span class="star">*</span></label>
+            <input type="email" id="email" name="email" placeholder="abcdefg@email.com">
+            <span id="emailFormErr" class="formErr">E-mail должен соответствовать формату xxxxxxxx@email.xxx</span>
+            <label for="phone">Номер телефона<span class="star">*</span></label>
+            <input type="tel" id="phone" name="phone" placeholder="+7(000)000-00-00">
+            <span id="phoneFormErr" class="formErr">Телефон должен строго соответствоватьформату +7(000)000-00-00</span>
+        </div>
+        <label for="textarea">Ваше сообщение</label>
+        <textarea name="text" id="" cols="30" rows="10" maxlength="150" placeholder="Не более 150 символов"></textarea>
+        <div class="btnWraper">
+            <input type="submit" id="btnSubmit">
+            <input type="reset" id="btnReset">
+        </div>
+    </form>
+</body>
+
+</html>

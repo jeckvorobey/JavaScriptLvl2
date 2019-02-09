@@ -1,0 +1,60 @@
+* {
+    box-sizing: border-box;
+}
+
+.search {
+    width: 500px;
+    display: block;
+    margin: 10px 0;
+}
+
+.search p {
+    font-family: sans-serif;
+    font-size: 16px;
+    font-weight: 800;
+    float: left;
+    margin: 0 10px 0 0;
+}
+
+.search input {
+    width: 360px;
+}
+
+
+#tabs .tab {
+    display: inline-block;
+    padding: 5px 10px;
+    cursor: pointer;
+    position: relative;
+    z-index: 5;
+}
+
+/* Класс который выделит активную вкладку */
+#tabs .whiteBorder {
+    border: 1px solid blueviolet;
+    border-bottom: 1px solid white;
+    border-radius: 3px 3px 0 0;
+}
+
+#tabs .tabContent {
+    width: 462px;
+    height: 100px;
+    border: 1px solid blueviolet;
+    position: relative;
+    top: -1px;
+    z-index: 1;
+    padding: 10px;
+    border-radius: 0 0 3px 3px;
+}
+
+#tabs .tabContent h4 {
+    margin: 0 0 10px;
+}
+
+#tabs .hide {
+    display: none;
+}
+
+#tabs .show {
+    display: block;
+}
