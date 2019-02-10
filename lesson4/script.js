@@ -1,6 +1,3 @@
-//Вкладки TAB
-let $tab = $('tab');
-let $tabContent = $('.tabContent');
 
 let $citySelect = $('#city');
 let $searchSity = $('#cityList')
@@ -32,4 +29,17 @@ $(document).ready(() => {
             }
         }
     })
+
+
+    //Переключатели Тав
+    $('.tabContent').hide();
+    $('.tabContent:first').show();
+    $('.wrapper div').click( (e) => { 
+        $('.tab').removeClass('whiteBorder');
+        $(e.target).addClass('whiteBorder');
+        $('.tabContent').hide();
+        let selectTab = $(e.target).find('a').attr("href");
+        $(selectTab).fadeIn();
+        
+    });
 });

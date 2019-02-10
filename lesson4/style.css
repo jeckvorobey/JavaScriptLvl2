@@ -20,6 +20,9 @@
     width: 360px;
 }
 
+#tabs {
+    float: left;
+}
 
 #tabs .tab {
     display: inline-block;
@@ -29,7 +32,9 @@
     z-index: 5;
 }
 
+
 /* Класс который выделит активную вкладку */
+
 #tabs .whiteBorder {
     border: 1px solid blueviolet;
     border-bottom: 1px solid white;
@@ -37,8 +42,8 @@
 }
 
 #tabs .tabContent {
-    width: 462px;
-    height: 100px;
+    width: 460px;
+    height: auto;
     border: 1px solid blueviolet;
     position: relative;
     top: -1px;
@@ -49,12 +54,4 @@
 
 #tabs .tabContent h4 {
     margin: 0 0 10px;
-}
-
-#tabs .hide {
-    display: none;
-}
-
-#tabs .show {
-    display: block;
 }
