@@ -20,6 +20,7 @@ $(document).ready(() => {
         }
     });
 
+
     //маска телефона 
     $('#phone').mask('+7(000)000-00-00', {
         translation: {
@@ -40,6 +41,5 @@ $(document).ready(() => {
         $('.tabContent').hide();
         let selectTab = $(e.target).find('a').attr("href");
         $(selectTab).fadeIn();
-        
     });
 });
