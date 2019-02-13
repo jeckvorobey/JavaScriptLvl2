@@ -9,13 +9,13 @@ $(document).ready(() => {
 
     //добавление товара
     $('.buy-btn').click(e => {
-        // cart.addProduct(e.target);
-		console.log('TCL: e.target', e.target)
+        cart.addProduct(e.target);
+		// console.log('TCL: e.target', e.target)
     });
+    
     console.log($('img'));
     //удаление товара
     $('.removeIcon').click(e => {
-		
         // cart.removeProduct(e.target);
 		console.log('TCL: e.target', e.target)
     });
