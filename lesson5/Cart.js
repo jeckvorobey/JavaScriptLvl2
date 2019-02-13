@@ -115,16 +115,18 @@ class Cart {
         } else {
             $(`.countRemove[data-id="${productId}"]`).removeClass('removeError');
             $(`div[data-product="${productId}"]`).remove();
+            console.log(this.cartItems);
             //Удаляем из массива продукт
-            $.each(this.cartItems, (i, elem) => {
+            $.each(find, (i, elem) => {
                 if (elem.id_product === productId) {
                     this.cartItems.splice(i, 1);
+                    // console.log(i, elem, 'равен id');
                 } else {
-                    //?
+                //   console.log(i, elem);
                 }
-            });
+            });           
             this.countGoods -= countRemove;
-            this.amount -= (find.price * countRemove);
+            this.amount -= find.price * countRemove;
             this._updateCart(find);
         }
         this._renderSum();
