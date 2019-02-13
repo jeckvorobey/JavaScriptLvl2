@@ -45,11 +45,21 @@ class Cart {
             class: 'cart-item',
             'data-product': product.id_product //присваиваем индитификатор через data атрибут
         });
+        let $removeBtn = $('<img/>', {
+            'class': 'removeIcon',
+            'alt': 'del',
+            'src': './icon/garbage.svg',
+            'title': 'Удалить',
+            'data-id': product.id_product,
+        });
         $product.append($(`<p class="product-name">${product.product_name}</p>`));
         $product.append($(`<p class="product-quantity">${product.quantity}</p>`));
         $product.append($(`<p class="product-price">${product.price} руб.</p>`));
-        $product.append($(`<input type="text" class="countRemove" data-product="${product.id_product}">`));
-        $product.append($(`<img alt="del" src="./icon/garbage.svg" class="removeIcon" data-product="${product.id_product}" title="Удалить">`)) 
+        $product.append($(`<input type="text" class="countRemove" data-id="${product.id_product}">`));
+        $product.append($removeBtn);
+        $removeBtn.click(e => {
+            this.removeProduct(e.target);
+        });
         $product.appendTo($('.cart-items-wrap'));
         // console.log('TCL: Cart -> _renderProduct -> containerProduct', $containerProduct)
     }
@@ -76,8 +86,8 @@ class Cart {
         } else {
             let product = {
                 id_product: productId,
-                price:  +$(element).data('price'),
-                product_name:  $(element).data('title'),
+                price: +$(element).data('price'),
+                product_name: $(element).data('title'),
                 quantity: 1
             }
             this.cartItems.push(product);
@@ -88,12 +98,35 @@ class Cart {
         this._renderSum();
     }
 
+    //удаляем товар из корзины
     removeProduct(element) {
         let productId = +$(element).data('id');
-		console.log('TCL: Cart -> removeProduct -> productId', productId)
-        let countRemove = $(`.countRemove[data-product="${productId}"]`).value;
-		console.log('TCL: Cart -> removeProduct -> countRemove', countRemove)
-        
-        // let find = this.cartItems.find(product => product.id_product === productId);
+        let countRemove = +$(`.countRemove[data-id="${productId}"]`).val();
+        // console.log(countRemove);
+        let find = this.cartItems.find(product => product.id_product === productId);
+        if (countRemove === 0 || countRemove > find.quantity) {
+            $(`.countRemove[data-id="${productId}"]`).addClass('removeError');
+        } else if (countRemove < find.quantity) {
+            $(`.countRemove[data-id="${productId}"]`).removeClass('removeError');
+            find.quantity -= countRemove;
+            this.countGoods -= countRemove;
+            this.amount -= find.price * countRemove;
+            this._updateCart(find);
+        } else {
+            $(`.countRemove[data-id="${productId}"]`).removeClass('removeError');
+            $(`div[data-product="${productId}"]`).remove();
+            //Удаляем из массива продукт
+            $.each(this.cartItems, (i, elem) => {
+                if (elem.id_product === productId) {
+                    this.cartItems.splice(i, 1);
+                } else {
+                    //?
+                }
+            });
+            this.countGoods -= countRemove;
+            this.amount -= (find.price * countRemove);
+            this._updateCart(find);
+        }
+        this._renderSum();
     }
 }
