@@ -90,6 +90,7 @@ class Cart {
                 product_name: $(element).data('title'),
                 quantity: 1
             }
+
             this.cartItems.push(product);
             this.amount += product.price;
             this.countGoods += product.quantity;
@@ -115,20 +116,17 @@ class Cart {
         } else {
             $(`.countRemove[data-id="${productId}"]`).removeClass('removeError');
             $(`div[data-product="${productId}"]`).remove();
-            console.log(this.cartItems);
+            // console.log(this.cartItems);
             //Удаляем из массива продукт
-            $.each(find, (i, elem) => {
-                if (elem.id_product === productId) {
-                    this.cartItems.splice(i, 1);
-                    // console.log(i, elem, 'равен id');
-                } else {
-                //   console.log(i, elem);
-                }
-            });           
+            this.cartItems.splice(this.cartItems.indexOf(find), 1);
+            console.log( this.cartItems);
+
+        }
+
             this.countGoods -= countRemove;
             this.amount -= find.price * countRemove;
             this._updateCart(find);
-        }
+
         this._renderSum();
     }
 }
