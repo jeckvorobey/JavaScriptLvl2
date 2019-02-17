@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="./vue.js" defer></script>
+    <script src="./comment.js" defer></script>
+    <script src="./form.js" defer></script>
+    <script src="./main.js" defer></script>
+  </head>
+  <body>
+    <div id="app">
+      <div id="comments">
+        <comment-item
+          v-for="(comment, i) of comments"
+          v-bind:comment="comment"
+          v-bind:key="i"
+          v-on:remove="remove"
+        ></comment-item>
+      </div>
+      <div id="mainForm">
+        <form-item
+        v-bind:form="form"
+        ></form-item>
+      </div>
+    </div>
+
+   
+  </body>
+</html>
