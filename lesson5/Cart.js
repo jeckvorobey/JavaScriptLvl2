@@ -55,7 +55,7 @@ class Cart {
         $product.append($(`<p class="product-name">${product.product_name}</p>`));
         $product.append($(`<p class="product-quantity">${product.quantity}</p>`));
         $product.append($(`<p class="product-price">${product.price} руб.</p>`));
-        $product.append($(`<input type="text" class="countRemove" data-id="${product.id_product}">`));
+        $product.append($(`<input type="text" class="countRemove" data-id="${product.id_product}" value="1">`));
         $product.append($removeBtn);
         $removeBtn.click(e => {
             this.removeProduct(e.target);
