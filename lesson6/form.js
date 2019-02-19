@@ -6,7 +6,6 @@ Vue.component('form-item', {
             text: '',
             approved: false,
             id: ''
-
         }
     },
     template: `

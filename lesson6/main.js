@@ -15,8 +15,10 @@ new Vue({
     },
     methods: {
         remove: function (elem) {
-            // console.log(this.curID);
-            this.comments.splice(this.comments.indexOf(elem), 1); 
+            let elemId = +elem.dataset.id;
+            let find = this.comments.find(comment => comment.id === elemId);
+            this.comments.splice(this.comments.indexOf(find), 1);
+            
         },
         addComment: function(elem) {
             // ++this.curID;
