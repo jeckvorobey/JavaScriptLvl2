@@ -45,7 +45,7 @@ gulp.task('js', () => {
 
 gulp.task('compress', () => {
     return gulp
-        .src('app/images/*.*')
+        .src('app/images/**/*')
         .pipe(imagemin([
             imagemin.gifsicle({
                 interlaced: true
@@ -66,14 +66,12 @@ gulp.task('compress', () => {
                 ]
             })
         ]))
-        .pipe(gulp.dest('dist/images'));
+        .pipe(gulp.dest('dist/images/'));
 })
 
 gulp.task('copyFiles', () => {
     return gulp
-        .src('app/images/**/*.*')
-        .pipe(gulp.dest('dist/images'))
-        .pipe(gulp.src('app/json/*.json'))
+        .src('app/json/*.json')
         .pipe(gulp.dest('dist'));
 });
 
