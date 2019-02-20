@@ -1,0 +1,17 @@
+$bg_color: rgba(233, 243, 243, 0.411);
+$fs: 16px;
+$fwN: 400;
+$fwB: 800;
+
+@import "cart";
+@import "products";
+
+
+body {
+    background-color: $bg_color
+}
+
+.cart-summary,
+.product-price {
+  text-align: right;
+}
