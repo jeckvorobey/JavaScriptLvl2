@@ -48,7 +48,7 @@ class Cart {
         let $removeBtn = $('<img/>', {
             'class': 'removeIcon',
             'alt': 'del',
-            'src': './icon/garbage.svg',
+            'src': './images/icon/garbage.svg',
             'title': 'Удалить',
             'data-id': product.id_product,
         });
@@ -116,16 +116,14 @@ class Cart {
         } else {
             $(`.countRemove[data-id="${productId}"]`).removeClass('removeError');
             $(`div[data-product="${productId}"]`).remove();
-            // console.log(this.cartItems);
-            //Удаляем из массива продукт
-            this.cartItems.splice(this.cartItems.indexOf(find), 1);
-            console.log( this.cartItems);
-
-        }
-
             this.countGoods -= countRemove;
             this.amount -= find.price * countRemove;
-            this._updateCart(find);
+            //Удаляем из массива продукт
+            this.cartItems.splice(this.cartItems.indexOf(find), 1);
+            console.log(this.cartItems);
+
+        }
+        this._updateCart(find);
 
         this._renderSum();
     }

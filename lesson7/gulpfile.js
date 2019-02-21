@@ -9,7 +9,7 @@ let gulp = require('gulp'),
     cssMiniFy = require('gulp-csso'),
     babel = require('gulp-babel'),
     pug = require('gulp-pug');
-imagemin = require('gulp-imagemin');
+    imagemin = require('gulp-imagemin');
 
 gulp.task('clean', () => {
     return delFiles('dist');
