@@ -5,9 +5,13 @@ class Cart {
         this.countGoods = 0; //общее количество товаров в корзине
         this.amount = 0; //общее стоимость товаров
         this.cartItems = [] //массив товаров
-        this._init(); //инициализация корзины
     }
-    _render() {
+    static async create(source) {
+        let cart = new Cart(source);
+        await cart._init();
+        return cart
+    }
+    async _render() {
         let $cartItemsDiv = $('<div/>', {
             class: 'cart-items-wrap'
         }); //блок обертка
@@ -22,9 +26,9 @@ class Cart {
         $totalCount.appendTo($(this.container));
         $totalPrice.appendTo($(this.container));
     }
-    _init() {
+    async _init() {
         this._render();
-        fetch(this.source)
+        await fetch(this.source)
             .then(result => result.json())
             .then(data => {
                 for (let product of data.contents) {
@@ -38,7 +42,7 @@ class Cart {
 
     }
     //рендер нового товара на странице
-    _renderProduct(product) {
+    async _renderProduct(product) {
         let $product = $('<div/>', {
             class: 'cart-item',
             'data-product': product.id_product //присваиваем индитификатор через data атрибут
