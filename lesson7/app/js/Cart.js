@@ -120,7 +120,7 @@ class Cart {
             this.amount -= find.price * countRemove;
             //Удаляем из массива продукт
             this.cartItems.splice(this.cartItems.indexOf(find), 1);
-            console.log(this.cartItems);
+            // console.log(this.cartItems);
 
         }
         this._updateCart(find);

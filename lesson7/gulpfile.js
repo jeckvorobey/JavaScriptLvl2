@@ -79,8 +79,7 @@ gulp.task('server', () => {
     return bs({
         server: {
             baseDir: 'dist'
-        },
-        browser: 'browser'
+        }
     });
 });
 
