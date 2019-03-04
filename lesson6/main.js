@@ -3,6 +3,7 @@ new Vue({
     data: {
         comments: [],
         curID: 0,
+        newComment: '',
     },
     mounted() {
         that = this;
@@ -22,6 +23,7 @@ new Vue({
         },
         addComment: function(elem) {
             // ++this.curID;
+            // this.comments.push(this.newComment);
         }
     }
 });

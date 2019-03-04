@@ -1,6 +1,6 @@
 Vue.component('form-item', {
     props: ['form'],
-    data: function() {
+    data: function () {
         return {
             author: '',
             text: '',
