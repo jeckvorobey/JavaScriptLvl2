@@ -5,7 +5,7 @@ $(document).ready(() => {
     let product3 = new Product(131, 'Клавиатура', 1600, 'images/keyboard.jpg');
 
     //Инициализируем новую корзину
-    let cart = new Cart('getCart.json');
+    let cart = new Cart('../json/getCart.json');
 
     //добавление товара
     $('.buy-btn').click(e => {
